@@ -5,31 +5,29 @@
 </template>
 
 <style lang="less">
-*{
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
-img{
+
+img {
   user-select: none;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+@font-face {
+  font-family: "font-light";
+  src: url("./assets/fonts/Oxanium-Light.ttf") format("truetype");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.font-light {
+  font-family: font-light, Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

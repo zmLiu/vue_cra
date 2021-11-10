@@ -1,48 +1,96 @@
 <template>
   <swiper-slide class="home-page1">
-    <img class="img2" src="./../../../assets/images/P1/p1_bgwz.png" alt="">
+    <img class="img2" src="./../../../assets/images/P1/p1_bgwz.png" alt="" />
+    <div
+      class="line-div line-top ani"
+      swiper-animate-effect="an4"
+      swiper-animate-duration="1s"
+      swiper-animate-delay="3s"
+    ></div>
+    <div
+      class="line-div line-left ani"
+      swiper-animate-effect="an1"
+      swiper-animate-duration="1s"
+    ></div>
+    <div
+      class="line-div line-bottom ani"
+      swiper-animate-effect="an2"
+      swiper-animate-duration="1s"
+      swiper-animate-delay="1s"
+    ></div>
+    <div
+      class="line-div line-right ani"
+      swiper-animate-effect="an3"
+      swiper-animate-duration="1s"
+      swiper-animate-delay="2s"
+    ></div>
+    <!--    <iframe-->
+    <!--      class="iframe"-->
+    <!--      style="border: none"-->
+    <!--      src="./dragonbones_player/index.html?name=1014&playname=attack&scale=8"-->
+    <!--    ></iframe>-->
     <div class="content">
-      <div class="line-div line-top">
-        <div class="logo"></div>
-      </div>
-      <div class="line-div line-right"></div>
-      <div class="line-div line-bottom"></div>
-      <div class="line-div line-left"></div>
-      <img class="img1" src="./../../../assets/images/P1/p1_man.png" alt="">
+      <img class="img1" src="./../../../assets/images/P1/p1_man.png" alt="" />
       <div class="right-box">
-        <img src="./../../../assets/images/P1/p1_slogan.png" alt="">
-        <div class="text font"></div>
-        <img class="img-btn" src="./../../../assets/images/P1/p1_btn2.png" alt="">
+        <img
+          class="ani"
+          swiper-animate-effect="slideInDown"
+          swiper-animate-duration=".5s"
+          src="./../../../assets/images/P1/p1_slogan.png"
+          alt=""
+        />
+        <div class="text font-light">
+          Era7: Game of Truth, a Brand New Innovative Play-to-Earn <br />
+          NFT Trading Card Game.
+        </div>
+        <img
+          class="img-btn ani"
+          swiper-animate-effect="fadeInUp"
+          swiper-animate-duration=".5s"
+          swiper-animate-delay=".5s"
+          src="./../../../assets/images/P1/p1_btn2.png"
+          alt=""
+        />
       </div>
+    </div>
+    <div class="mouse-tips">
+      <img
+        class="up downUp"
+        src="../../../assets/images/P1/p1_fuchuang_shang.png"
+        alt=""
+      />
+      <div>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;Roll</span>
+        <span>Switch</span>
+      </div>
+      <img
+        class="down upDown"
+        src="../../../assets/images/P1/p1_fuchuang_xia.png"
+        alt=""
+      />
     </div>
   </swiper-slide>
 </template>
 
 <script>
-
-import {SwiperSlide,} from 'vue-awesome-swiper'
+import { SwiperSlide } from "vue-awesome-swiper";
 
 export default {
-  name: 'homePage1',
+  name: "homePage1",
   props: {},
-  components: {SwiperSlide},
+  components: { SwiperSlide },
   data() {
-    return {}
+    return {};
   },
   computed: {},
   methods: {},
   watch: {},
-  created() {
-  },
-  mounted() {
-  },
-  updated() {
-  },
-  beforeDestroy() {
-  },
-  destroyed() {
-  },
-}
+  created() {},
+  mounted() {},
+  updated() {},
+  beforeDestroy() {},
+  destroyed() {},
+};
 </script>
 
 <style scoped lang="less">
@@ -56,8 +104,8 @@ export default {
 }
 
 .content {
-  width: 100%;
-  max-width: 1200px;
+  width: 80%;
+  max-width: 1300px;
   height: 80%;
   position: relative;
   top: 50%;
@@ -68,66 +116,71 @@ export default {
 .line-div {
   position: absolute;
   z-index: 10;
+  opacity: 0;
 
   &.line-top {
-    left: 25px;
-    top: 0;
-    width: calc(100% - 50px);
+    right: 75px;
+    top: 50px;
+    width: calc(100% - 150px);
     height: 50px;
-    background: url("./../../../assets/images/P1/p1_kuang_shang.png") no-repeat center;
+    background: url("./../../../assets/images/P1/p1_kuang_xia.png") no-repeat
+      center;
     background-size: 100% auto;
-
-    .logo {
-      width: 145px;
-      height: 50px;
-      margin: auto;
-      background: url("./../../../assets/images/P1/p1_logo.png") no-repeat center;
-      background-size: auto 90%;
-    }
   }
 
   &.line-bottom {
-    left: 25px;
-    bottom: 0;
-    width: calc(100% - 50px);
+    left: 75px;
+    bottom: 50px;
+    width: calc(100% - 150px);
     height: 50px;
-    background: url("./../../../assets/images/P1/p1_kuang_xia.png") no-repeat center;
+    background: url("./../../../assets/images/P1/p1_kuang_xia.png") no-repeat
+      center;
     background-size: 100% auto;
   }
 
   &.line-left {
-    left: 0;
+    left: 50px;
     top: 0;
     width: 50px;
     height: 100%;
-    background: url("./../../../assets/images/P1/p1_kuang_shuxian.png") no-repeat center;
-    background-size: auto calc(100% - 60px);
+    background: url("./../../../assets/images/P1/p1_kuang_shuxian.png")
+      no-repeat center;
+    background-size: auto calc(100% - 160px);
   }
 
   &.line-right {
-    right: 0;
-    top: 0;
+    right: 50px;
+    bottom: 0;
     width: 50px;
     height: 100%;
-    background: url("./../../../assets/images/P1/p1_kuang_shuxian.png") no-repeat center;
-    background-size: auto calc(100% - 60px);
+    background: url("./../../../assets/images/P1/p1_kuang_shuxian.png")
+      no-repeat center;
+    background-size: auto calc(100% - 160px);
   }
 }
 
 .img1 {
   width: 1000px;
-  max-width:60%;
+  max-width: 70%;
   height: auto;
   position: absolute;
-  top: 40%;
+  top: 45%;
   transform: translateY(-50%);
   left: 0;
+}
+.iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .img2 {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 50px;
   width: 700px;
 }
 
@@ -135,15 +188,154 @@ export default {
   position: absolute;
   right: 50px;
   top: 50px;
-  width:400px;
-  max-width:30%;
-  img{
-    max-width:100%;
+  width: 35%;
+  z-index: 100;
+  //max-width: 40%;
+
+  img {
+    max-width: 100%;
   }
-  .img-btn{
-    width: 60%;
-    margin-left: 40%;
+
+  .text {
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    margin: 20px 0 60px 0;
+  }
+
+  .img-btn {
+    height: 50px;
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
     cursor: pointer;
   }
+}
+
+.mouse-tips {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  .up,
+  .down {
+    width: 30px;
+  }
+  > div {
+    height: 50px;
+    width: 180px;
+    display: flex;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../../../assets/images/P1/p1_fuchuang_shubiao.png")
+      no-repeat center;
+    background-size: auto 50px;
+  }
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
+@keyframes downUp {
+  0% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.upDown {
+  animation-name: upDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.downUp {
+  animation-name: downUp;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes an1 {
+  0% {
+    visibility: initial;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    visibility: initial;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes an2 {
+  0% {
+    visibility: initial;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    visibility: initial;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes an3 {
+  0% {
+    visibility: initial;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    visibility: initial;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes an4 {
+  0% {
+    visibility: initial;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    visibility: initial;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.an1 {
+  animation-name: an1;
+}
+.an2 {
+  animation-name: an2;
+}
+.an3 {
+  animation-name: an3;
+}
+.an4 {
+  animation-name: an4;
 }
 </style>
