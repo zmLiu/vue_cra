@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+import { loadingFn } from "@/assets/loading";
+
+export default {
+  created() {
+    loadingFn();
+  },
+};
+</script>
 <style lang="less">
 * {
   padding: 0;

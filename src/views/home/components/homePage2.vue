@@ -51,7 +51,7 @@
             focuses on creating a financial system that combines blockchain with
             games to create an E-sports ecosystem. With up to 1000 different
             cards in the game, this will give players a 3-minute, one-game
-            experience and rich Era token, ALP (a resource token for summoning
+            experience and rich Era token, GOT(a resource token for summoning
             functions) rewards, players can trade, regardless of your game
             technology or the size of your investment in NFTs, and you'll have a
             chance to earn money!
@@ -107,10 +107,11 @@ export default {
       width: 400px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       padding: 14px;
       position: relative;
       z-index: 1;
+      padding-top: 60px;
+      overflow: hidden;
       &:before {
         content: "";
         background: url("../../../assets/images/P2/bg2.jpg") no-repeat;
@@ -127,13 +128,13 @@ export default {
       .title {
         border-bottom: 1px solid #ffdf52;
         line-height: 2;
-        font-size: 28px;
+        font-size: 20px;
         color: #ffdf52;
         margin-bottom: 20px;
       }
 
       .text {
-        font-size: 18px;
+        font-size: 1.9vh;
         color: #fffbd2;
         line-height: 1.5;
       }
@@ -175,7 +176,7 @@ export default {
       }
       .text {
         flex: 1;
-        font-size: 18px;
+        font-size: 2vh;
         color: #fffbd2;
         display: flex;
         align-items: center;

@@ -1,14 +1,8 @@
 <template>
   <div class="float-box">
-    <a href=""
-      ><img src="../../../assets/images/P1/p1_fuchuang_icon1.png" alt=""
-    /></a>
-    <a href=""
-      ><img src="../../../assets/images/P1/p1_fuchuang_icon2.png" alt=""
-    /></a>
-    <a href=""
-      ><img src="../../../assets/images/P1/p1_fuchuang_icon3.png" alt=""
-    /></a>
+    <a href="https://twitter.com/Era7_official" target="_blank"></a>
+    <a href="https://discord.gg/yUjGpQ35" target="_blank"></a>
+    <a href="https://t.me/joinchat/aF3LUIC8PKVhNDA6" target="_blank"></a>
   </div>
 </template>
 
@@ -47,5 +41,24 @@ export default {
   align-items: center;
   justify-content: space-around;
   padding: 15px 0;
+  a {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../../../assets/images/P1/p1_fuchuang_icon4.png") no-repeat;
+    background-size: 96px 64px;
+    &:hover {
+      background-position-y: -32px;
+    }
+    &:nth-child(1) {
+      background-position-x: 0;
+    }
+    &:nth-child(2) {
+      background-position-x: -32px;
+    }
+    &:nth-child(3) {
+      background-position-x: -64px;
+    }
+  }
 }
 </style>

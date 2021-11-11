@@ -6,7 +6,7 @@
       src="../../../assets/images/P3/01/p3_man2.png"
     />
     <div class="title">
-      <span>
+      <span class="font-light">
         Get your NFTs item by marketplace,summon your Legion and make money!
       </span>
     </div>
@@ -16,7 +16,11 @@
       alt=""
     />
     <div class="content">
-      <swiper class="page3-swiper" ref="mySwiper" :options="swiperOptions">
+      <swiper
+        class="page3-swiper swiper-no-swiping"
+        ref="mySwiper"
+        :options="swiperOptions"
+      >
         <swiper-slide class="item-box">
           <img
             class="img1 ani"
@@ -38,32 +42,29 @@
             swiper-animate-delay=".4s"
             src="../../../assets/images/P3/01/man.png"
           />
-          <div class="top-img-box">
-            <img class="img4" src="../../../assets/images/P3/01/p3_01_pz.png" />
-            <img
-              class="img5"
-              src="../../../assets/images/P3/01/p3_01_name.png"
-            />
-          </div>
+          <img
+            class="coming-soon1 ani"
+            swiper-animate-effect="fadeInDown"
+            swiper-animate-duration=".5s"
+            swiper-animate-delay=".4s"
+            src="../../../assets/images/P3/01/wz.png"
+          />
           <div class="text-box">
-            <img class="img6" src="../../../assets/images/P3/01/p3_01_zz.png" />
-            <div class="text font-light">
-              King of beasts in the wild. Forthright, informal, heroic. There's
-              nothing that can't be solved by fighting. Ryan was raised by wild
-              animals from an early age and was able to communicate with wild
-              beasts in the wild. Legend has it that when he was young, he
-              challenged and defeated a hundred different ferocious beasts (the
-              source of his scars) with his bare hands, earning the respect and
-              recognition of all animals in the wild. The biggest headache thing
-              is arithmetic.
+            <div
+              class="text font-light ani"
+              swiper-animate-effect="fadeInUp"
+              swiper-animate-duration=".4s"
+              swiper-animate-delay=".4s"
+            >
+              {{ text }}
             </div>
-            <img
-              class="img7 ani"
+            <div
+              @click="$store.commit('Set_ComingSoon', true)"
               swiper-animate-effect="fadeInUp"
               swiper-animate-duration=".4s"
               swiper-animate-delay=".6s"
-              src="../../../assets/images/P3/01/p3_btn.png"
-            />
+              class="img7 ani"
+            ></div>
           </div>
         </swiper-slide>
         <swiper-slide class="item-box">
@@ -85,13 +86,6 @@
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             src="../../../assets/images/P3/02/P3_02_man.png"
-          />
-          <img
-            class="img9 ani"
-            swiper-animate-effect="fadeInUp"
-            swiper-animate-duration=".5s"
-            swiper-animate-delay=".4s"
-            src="../../../assets/images/P3/02/P3_02_wenhao.png"
           />
           <img
             class="coming-soon ani"
@@ -119,14 +113,7 @@
             class="img2 ani"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
-            src="../../../assets/images/P3/03/p3_03_man.png"
-          />
-          <img
-            class="img9 ani"
-            swiper-animate-effect="fadeInUp"
-            swiper-animate-duration=".5s"
-            swiper-animate-delay=".4s"
-            src="../../../assets/images/P3/02/P3_02_wenhao.png"
+            src="../../../assets/images/P3/03/P3_03_man.png"
           />
           <img
             class="coming-soon ani"
@@ -157,13 +144,6 @@
             src="../../../assets/images/P3/04/P3_04_man.png"
           />
           <img
-            class="img9 ani"
-            swiper-animate-effect="fadeInUp"
-            swiper-animate-duration=".5s"
-            swiper-animate-delay=".4s"
-            src="../../../assets/images/P3/02/P3_02_wenhao.png"
-          />
-          <img
             class="coming-soon ani"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
@@ -192,13 +172,6 @@
             src="../../../assets/images/P3/05/P3_05_man.png"
           />
           <img
-            class="img9 ani"
-            swiper-animate-effect="fadeInUp"
-            swiper-animate-duration=".5s"
-            swiper-animate-delay=".4s"
-            src="../../../assets/images/P3/02/P3_02_wenhao.png"
-          />
-          <img
             class="coming-soon ani"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
@@ -208,9 +181,9 @@
         </swiper-slide>
       </swiper>
       <div class="btn-bar">
-        <div class="left-btn"></div>
+        <div class="left-btn" @click="onNextPrev(-1)"></div>
         <div class="home-page3-pagination"></div>
-        <div class="right-btn"></div>
+        <div class="right-btn" @click="onNextPrev(1)"></div>
       </div>
     </div>
   </swiper-slide>
@@ -229,17 +202,16 @@ export default {
   components: { Swiper, SwiperSlide },
   data() {
     return {
+      pageIndex: 0,
       activeIndex: 0,
+      text: "King of beasts in the wild. Forthright, informal, heroic. There's nothing that can't be solved by fighting. Ryan was raised by wild animals from an early age and was able to communicate with wild beasts in the wild.Legend has it that when he was young, he challenged and defeated a hundred different ferocious beasts with his bare hands, earning the respect and recognition of all animals in the wild.",
       swiperOptions: {
         pagination: {
           el: ".home-page3-pagination",
         },
+        speed: 500,
         lazy: {
           loadPrevNext: true,
-        },
-        navigation: {
-          nextEl: ".right-btn",
-          prevEl: ".left-btn",
         },
         on: {
           init: function () {
@@ -269,7 +241,14 @@ export default {
       return this.$refs.mySwiper.$swiper;
     },
   },
-  methods: {},
+  methods: {
+    onNextPrev(num) {
+      if (this.activeIndex == 0 && num == -1) return;
+      if (this.activeIndex == 4 && num == 1) return;
+      this.activeIndex += num;
+      this.swiper.slideTo(this.activeIndex, 500, true);
+    },
+  },
   watch: {},
   created() {},
   mounted() {},
@@ -293,16 +272,19 @@ export default {
   width: auto;
   font-weight: bold;
   color: #ffffff;
-  margin-top: 80px;
+  margin-top: 15vh;
   position: relative;
   text-align: center;
   z-index: 100;
   font-size: 24px;
-  -webkit-text-stroke: 1px #4e5bab;
-  text-stroke: 1px #4e5bab;
+  text-shadow: 2px 2px 4px #4e5bab;
+
   span {
-    border-bottom: 1px solid #fff;
+    //border-bottom: 1px solid #fff;
     padding-bottom: 10px;
+    background: url("../../../assets/images/P3/03/p3_bg_lin2.png") no-repeat
+      bottom center;
+    background-size: 100% 1px;
   }
 }
 
@@ -312,7 +294,7 @@ export default {
   height: 700px;
   max-height: 80vh;
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   //background: rgba(0, 0, 0, 0.5);
@@ -373,7 +355,7 @@ export default {
 
   .img1 {
     width: calc(100% - 50px);
-    height: auto;
+    height: 40vh;
     position: absolute;
     bottom: 0;
     left: 25px;
@@ -389,8 +371,8 @@ export default {
 
   .img2 {
     position: absolute;
-    bottom: -50px;
-    left: -30px;
+    bottom: -8px;
+    left: 0;
     height: 100%;
   }
 
@@ -401,14 +383,6 @@ export default {
 
   .img5 {
     height: 40px;
-  }
-
-  .img9 {
-    width: 60px;
-    position: absolute;
-    bottom: 130px;
-    left: 300px;
-    z-index: 10;
   }
 
   .top-img-box {
@@ -426,25 +400,33 @@ export default {
     right: 50px;
     bottom: 20px;
     z-index: 100;
-    width: 400px;
+    width: 500px;
 
     .img6 {
       height: 60px;
     }
 
     .text {
-      font-size: 18px;
+      font-size: 1.8vh;
       color: #fff;
-      overflow: auto;
-      height: 200px;
-      margin: 20px 0;
-      padding-right: 20px;
+      height: 15vh;
+      margin-bottom: 40px;
+      padding-right: 40px;
     }
 
     .img7 {
-      height: 70px;
+      width: 300px;
+      height: 60px;
       display: block;
       margin: auto;
+      background: url("../../../assets/images/P3/01/p3_btn.png") no-repeat top
+        center;
+      background-size: 300px 120px;
+      cursor: pointer;
+
+      &:hover {
+        background-position-y: bottom;
+      }
     }
 
     .img8 {
@@ -455,9 +437,16 @@ export default {
 
   .coming-soon {
     position: absolute;
-    bottom: 100px;
+    top: 10vh;
     right: 0;
-    height: 400px;
+    height: 40vh;
+  }
+
+  .coming-soon1 {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    height: 25vh;
   }
 }
 

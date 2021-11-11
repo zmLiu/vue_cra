@@ -1,0 +1,82 @@
+.loading-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: #a6d0ff;
+}
+
+.loading-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.loading-img {
+  position: relative;
+}
+
+.loading-img img {
+  height: 120px;
+  display: block;
+}
+
+.loading-img .loading-active {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+  height: 0%;
+  width: 100px;
+}
+
+.loading-img .loading-active img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.loading-text {
+  height: 34px;
+  margin-top: 20px;
+}
+
+@keyframes dianAni {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dianAni1 {
+  animation-name: dianAni;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.dianAni2 {
+  animation-name: dianAni;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.dianAni3 {
+  animation-name: dianAni;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

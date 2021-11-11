@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-    <home-nav />
-    <float-box />
+    <home-nav ref="navBox" v-if="!isEnd" />
+    <float-box v-if="!isEnd" />
     <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
       <home-page1 />
       <home-page2 />
-      <home-page3 />
-      <home-page4 />
+      <home-page3 ref="page3" />
+      <home-page5 />
+      <home-page4 ref="page4" />
     </swiper>
+    <coming-soon />
   </div>
 </template>
 
@@ -24,10 +26,14 @@ import {
   swiperAnimate,
 } from "@/assets/swiper.animate1.0.3.min";
 import HomePage4 from "@/views/home/components/homePage4";
+import HomePage5 from "@/views/home/components/homePage5";
+import ComingSoon from "@/views/comingSoon";
 
 export default {
   name: "Home",
   components: {
+    ComingSoon,
+    HomePage5,
     HomePage4,
     FloatBox,
     HomePage3,
@@ -41,9 +47,12 @@ export default {
   },
   data() {
     return {
+      activeIndex: 0,
+      isEnd: false,
       swiperOptions: {
         direction: "vertical",
         mousewheel: true,
+        speed: 1000,
         slidesPerView: "auto",
         spaceBetween: 0,
         pagination: {
@@ -63,6 +72,14 @@ export default {
             // eslint-disable-next-line no-undef
             swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
           },
+          slideChange: () => {
+            // console.log(this.swiper.progress);
+            // console.log(this.swiper.isEnd);
+            this.activeIndex = this.swiper.activeIndex;
+            this.isEnd = this.swiper.isEnd;
+            this.navBox.activeItem = this.swiper.activeIndex;
+            this.$refs.page3.pageIndex = this.swiper.activeIndex;
+          },
         },
         // Some Swiper option/callback...
       },
@@ -74,7 +91,9 @@ export default {
     },
   },
   mounted() {
-    // this.swiper.slideTo(3, 1000, false)x
+    this.navBox = this.$refs.navBox;
+    this.navBox.swiper = this.swiper;
+    this.$refs.page4.swiper = this.swiper;
   },
 };
 </script>

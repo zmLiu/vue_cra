@@ -5,7 +5,7 @@
       class="line-div line-top ani"
       swiper-animate-effect="an4"
       swiper-animate-duration="1s"
-      swiper-animate-delay="3s"
+      swiper-animate-delay="1s"
     ></div>
     <div
       class="line-div line-left ani"
@@ -22,15 +22,11 @@
       class="line-div line-right ani"
       swiper-animate-effect="an3"
       swiper-animate-duration="1s"
-      swiper-animate-delay="2s"
+      swiper-animate-delay="1s"
     ></div>
-    <!--    <iframe-->
-    <!--      class="iframe"-->
-    <!--      style="border: none"-->
-    <!--      src="./dragonbones_player/index.html?name=1014&playname=attack&scale=8"-->
-    <!--    ></iframe>-->
+    <iframe ref="dragonBones" class="iframe"></iframe>
     <div class="content">
-      <img class="img1" src="./../../../assets/images/P1/p1_man.png" alt="" />
+      <!-- <img class="img1" src="./../../../assets/images/P1/p1_man.png" alt="" /> -->
       <div class="right-box">
         <img
           class="ani"
@@ -39,18 +35,16 @@
           src="./../../../assets/images/P1/p1_slogan.png"
           alt=""
         />
-        <div class="text font-light">
-          Era7: Game of Truth, a Brand New Innovative Play-to-Earn <br />
-          NFT Trading Card Game.
+        <div class="img-btn" @click="$store.commit('Set_ComingSoon', true)">
+          <img
+            class="ani"
+            swiper-animate-effect="fadeInUp"
+            swiper-animate-duration=".5s"
+            swiper-animate-delay=".5s"
+            src="./../../../assets/images/P1/p1_btn2.png"
+            alt=""
+          />
         </div>
-        <img
-          class="img-btn ani"
-          swiper-animate-effect="fadeInUp"
-          swiper-animate-duration=".5s"
-          swiper-animate-delay=".5s"
-          src="./../../../assets/images/P1/p1_btn2.png"
-          alt=""
-        />
       </div>
     </div>
     <div class="mouse-tips">
@@ -83,10 +77,34 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    initDragonBones: function () {
+      let src = "./dragonbones_player/index.html?name=gmsm&playname=idle";
+      this.$refs.dragonBones.src = src;
+      this.$refs.dragonBones.onload = this.dragonBonesOnLoad;
+    },
+    dragonBonesOnLoad: function () {
+      this.$refs.dragonBones.contentWindow["aniComplete"] =
+        this.initDragonBonesComplete;
+    },
+    initDragonBonesComplete: function () {
+      this.setDragonBonesScale();
+    },
+    setDragonBonesScale: function () {
+      let sy = document.body.clientHeight / 960;
+      this.$refs.dragonBones.contentWindow.setAniScale(sy >= 1 ? 1 : sy);
+      window.iframeLoaded = true;
+    },
+  },
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.initDragonBones();
+    let thisObj = this;
+    window.onresize = function () {
+      thisObj.setDragonBonesScale();
+    };
+  },
   updated() {},
   beforeDestroy() {},
   destroyed() {},
@@ -170,11 +188,11 @@ export default {
 }
 .iframe {
   width: 100%;
-  height: 100%;
+  height: 110%;
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: 1;
+  left: -20%;
+  border: none;
 }
 
 .img2 {
@@ -204,11 +222,24 @@ export default {
   }
 
   .img-btn {
-    height: 50px;
-    margin-left: auto;
-    margin-right: 0;
+    width: 240px;
+    height: 60px;
     display: block;
     cursor: pointer;
+    margin: 20% 0 0 auto;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      width: 240px;
+      height: 120px;
+    }
+    &:hover {
+      img {
+        top: -60px;
+      }
+    }
   }
 }
 
