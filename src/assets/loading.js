@@ -1,6 +1,6 @@
 export function loadingFn() {
-  let $loading = document.querySelector(".loading-box");
-  $loading.parentNode.removeChild($loading);
+  // let $loading = document.querySelector(".loading-box");
+  // $loading.parentNode.removeChild($loading);
   setTimeout(() => {
     let imgs = document.querySelectorAll("img");
     let allLen = imgs.length + 1;
