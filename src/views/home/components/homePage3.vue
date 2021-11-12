@@ -23,27 +23,27 @@
       >
         <swiper-slide class="item-box">
           <img
-            class="img1 ani"
+            class="img1 ani2 ani"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".2s"
             src="../../../assets/images/P3/p3_bg.png"
           />
           <img
-            class="img1 ani"
+            class="img1 ani2 ani"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani"
+            class="img2 ani2 ani "
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             swiper-animate-delay=".4s"
             src="../../../assets/images/P3/01/man.png"
           />
           <img
-            class="coming-soon1 ani"
+            class="coming-soon1 ani2 ani"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".4s"
@@ -51,7 +51,7 @@
           />
           <div class="text-box">
             <div
-              class="text font-light ani"
+              class="text font-light ani2 ani"
               swiper-animate-effect="fadeInUp"
               swiper-animate-duration=".4s"
               swiper-animate-delay=".4s"
@@ -63,32 +63,32 @@
               swiper-animate-effect="fadeInUp"
               swiper-animate-duration=".4s"
               swiper-animate-delay=".6s"
-              class="img7 ani"
+              class="img7 ani2 ani"
             ></div>
           </div>
         </swiper-slide>
         <swiper-slide class="item-box">
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".2s"
             src="../../../assets/images/P3/p3_bg.png"
           />
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani"
+            class="img2 ani2"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             src="../../../assets/images/P3/02/P3_02_man.png"
           />
           <img
-            class="coming-soon ani"
+            class="coming-soon ani2"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".4s"
@@ -97,26 +97,26 @@
         </swiper-slide>
         <swiper-slide class="item-box">
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".2s"
             src="../../../assets/images/P3/p3_bg.png"
           />
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani"
+            class="img2 ani2"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             src="../../../assets/images/P3/03/P3_03_man.png"
           />
           <img
-            class="coming-soon ani"
+            class="coming-soon ani2"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".4s"
@@ -125,26 +125,26 @@
         </swiper-slide>
         <swiper-slide class="item-box">
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".2s"
             src="../../../assets/images/P3/p3_bg.png"
           />
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani"
+            class="img2 ani2"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             src="../../../assets/images/P3/04/P3_04_man.png"
           />
           <img
-            class="coming-soon ani"
+            class="coming-soon ani2"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".4s"
@@ -153,26 +153,26 @@
         </swiper-slide>
         <swiper-slide class="item-box">
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".2s"
             src="../../../assets/images/P3/p3_bg.png"
           />
           <img
-            class="img1 ani"
+            class="img1 ani2"
             swiper-animate-effect="zoomIn"
             swiper-animate-duration=".5s"
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani"
+            class="img2 ani2"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             src="../../../assets/images/P3/05/P3_05_man.png"
           />
           <img
-            class="coming-soon ani"
+            class="coming-soon ani2"
             swiper-animate-effect="fadeInDown"
             swiper-animate-duration=".5s"
             swiper-animate-delay=".4s"
@@ -194,7 +194,7 @@ import { SwiperSlide, Swiper, directive } from "vue-awesome-swiper";
 import {
   swiperAnimateCache,
   swiperAnimate,
-} from "@/assets/swiper.animate1.0.3.min";
+} from "@/assets/swiper2.animate1.0.3.min";
 
 export default {
   name: "homePage3",
