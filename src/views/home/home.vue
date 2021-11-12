@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <home-nav ref="navBox" v-if="!isEnd"/>
-    <float-box v-if="!isEnd"/>
+    <home-nav ref="navBox" v-show="!isEnd"/>
+    <float-box v-show="!isEnd"/>
     <!--    swiper-no-swiping-->
     <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
       <home-page1/>
@@ -71,9 +71,13 @@ export default {
           },
           reachEnd: () => {
             this.isEnd = true;
+            this.navBox.activeItem = this.swiper.activeIndex;
+            this.$refs.page3.pageIndex = this.swiper.activeIndex;
           },
           fromEdge:()=>{
             this.isEnd=false;
+            this.navBox.activeItem = this.swiper.activeIndex;
+            this.$refs.page3.pageIndex = this.swiper.activeIndex;
           },
           slideChange: () => {
             // console.log(this.swiper.progress);
