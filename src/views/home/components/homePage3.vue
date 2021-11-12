@@ -262,7 +262,7 @@ export default {
         }
       }
       if (winH < 900) {
-        this.$refs.content.style.bottom = "-" + winH * (0.8 + -scale) + "px";
+        this.$refs.content.style.bottom = "-" + winH * (0.8 - scale) + "px";
       }
       console.log(scale);
       this.$refs.content.style.transform = "scale(" + scale + ")";
