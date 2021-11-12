@@ -57,11 +57,11 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     .title {
-      height: 40px;
+      height: 35px;
       margin-bottom: 10vh;
     }
     .logo {
-      height: 25vh;
+      height: 400px;
     }
   }
 }
