@@ -2,7 +2,7 @@
   <div class="home">
     <home-nav ref="navBox" v-if="!isEnd"/>
     <float-box v-if="!isEnd"/>
-<!--    swiper-no-swiping-->
+    <!--    swiper-no-swiping-->
     <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
       <home-page1/>
       <home-page2/>
@@ -48,12 +48,12 @@ export default {
   },
   data() {
     return {
-      activeIndex: 0,
+      //是否滑到最后
       isEnd: false,
       swiperOptions: {
         direction: "vertical",
         mousewheel: true,
-        touchRatio:.5,
+        touchRatio: .5,
         speed: 1000,
         slidesPerView: "auto",
         simulateTouch: false,
@@ -69,10 +69,12 @@ export default {
             // eslint-disable-next-line no-undef
             swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
           },
+          reachEnd: () => {
+            this.isEnd = true;
+          },
           slideChange: () => {
             // console.log(this.swiper.progress);
             // console.log(this.swiper.isEnd);
-            this.activeIndex = this.swiper.activeIndex;
             this.isEnd = this.swiper.isEnd;
             this.navBox.activeItem = this.swiper.activeIndex;
             this.$refs.page3.pageIndex = this.swiper.activeIndex;
@@ -81,18 +83,23 @@ export default {
         // Some Swiper option/callback...
       },
     };
-  },
+  }
+  ,
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    },
-  },
+    }
+    ,
+  }
+  ,
   mounted() {
     this.navBox = this.$refs.navBox;
     this.navBox.swiper = this.swiper;
     this.$refs.page4.swiper = this.swiper;
-  },
-};
+  }
+  ,
+}
+;
 </script>
 <style lang="less">
 .home-swiper {
