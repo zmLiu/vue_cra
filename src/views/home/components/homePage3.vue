@@ -5,7 +5,12 @@
       class="img3"
       src="../../../assets/images/P3/01/p3_man2.png"
     />
-    <div class="title">
+    <div
+      class="title ani"
+      swiper-animate-effect="fadeInDown"
+      swiper-animate-duration=".5s"
+      swiper-animate-delay=".2s"
+    >
       <span class="font-light">
         Get your NFTs item by marketplace,summon your Legion and make money!
       </span>
@@ -15,12 +20,8 @@
       src="../../../assets/images/P3/p3_chebian.png"
       alt=""
     />
-    <div class="content">
-      <swiper
-        class="page3-swiper"
-        ref="mySwiper"
-        :options="swiperOptions"
-      >
+    <div class="content" ref="content">
+      <swiper class="page3-swiper" ref="mySwiper" :options="swiperOptions">
         <swiper-slide class="item-box">
           <img
             class="img1 ani2 ani"
@@ -36,7 +37,7 @@
             src="../../../assets/images/P3/p3_kuang.png"
           />
           <img
-            class="img2 ani2 ani "
+            class="img2 ani2 ani"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration=".8s"
             swiper-animate-delay=".4s"
@@ -248,10 +249,34 @@ export default {
       this.activeIndex += num;
       this.swiper.slideTo(this.activeIndex, 500, true);
     },
+    setContentScale() {
+      let winW = window.innerWidth;
+      let winH = window.innerHeight;
+      let scale = 1;
+      //需要是缩小的屏幕尺寸
+      if (winH < 900 || winW < 1500) {
+        if (winH / winW >= 900 / 1500) {
+          scale = winW / 1800;
+        } else {
+          scale = winH / 900;
+        }
+      }
+      if (winH < 900) {
+        this.$refs.content.style.bottom = "-" + winH * (0.8 + -scale) + "px";
+      }
+      console.log(scale);
+      this.$refs.content.style.transform = "scale(" + scale + ")";
+    },
   },
   watch: {},
   created() {},
-  mounted() {},
+  async mounted() {
+    await this.$nextTick();
+    this.setContentScale();
+    window.onresize = () => {
+      this.setContentScale();
+    };
+  },
   updated() {},
   beforeDestroy() {},
   destroyed() {},
@@ -290,14 +315,11 @@ export default {
 
 .content {
   width: 1200px;
-  max-width: 70%;
   height: 700px;
-  max-height: 80vh;
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-  //background: rgba(0, 0, 0, 0.5);
+  margin-left: -600px;
   .btn-bar {
     height: 100px;
     position: relative;
@@ -347,7 +369,8 @@ export default {
 }
 
 .page3-swiper {
-  height: calc(100% - 100px);
+  height: 600px;
+  width: 1200px;
 }
 
 .item-box {
@@ -355,7 +378,7 @@ export default {
 
   .img1 {
     width: calc(100% - 50px);
-    height: 40vh;
+    height: 450px;
     position: absolute;
     bottom: 0;
     left: 25px;
@@ -363,7 +386,7 @@ export default {
 
   .img0 {
     width: calc(100% - 50px);
-    height: auto;
+    height: 450px;
     position: absolute;
     bottom: 0;
     left: 25px;
@@ -437,14 +460,14 @@ export default {
 
   .coming-soon {
     position: absolute;
-    top: 10vh;
+    top: 0;
     right: 0;
     height: 40vh;
   }
 
   .coming-soon1 {
     position: absolute;
-    top: 8vh;
+    top: 0;
     right: 0;
     height: 25vh;
   }
