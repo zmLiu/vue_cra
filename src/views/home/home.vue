@@ -1,20 +1,20 @@
 <template>
   <div class="home">
-    <home-nav ref="navBox" v-if="!isEnd" />
-    <float-box v-if="!isEnd" />
-    <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
-      <home-page1 />
-      <home-page2 />
-      <home-page3 ref="page3" />
-      <home-page5 />
-      <home-page4 ref="page4" />
+    <home-nav ref="navBox" v-if="!isEnd"/>
+    <float-box v-if="!isEnd"/>
+    <swiper class="home-swiper  swiper-no-swiping" ref="mySwiper" :options="swiperOptions">
+      <home-page1/>
+      <home-page2/>
+      <home-page3 ref="page3"/>
+      <home-page5/>
+      <home-page4 ref="page4"/>
     </swiper>
-    <coming-soon />
+    <coming-soon/>
   </div>
 </template>
 
 <script>
-import { Swiper, directive } from "vue-awesome-swiper";
+import {Swiper, directive} from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import HomePage1 from "@/views/home/components/homePage1";
 import HomeNav from "@/views/home/components/homeNav";
@@ -54,13 +54,8 @@ export default {
         mousewheel: true,
         speed: 1000,
         slidesPerView: "auto",
+        simulateTouch: false,
         spaceBetween: 0,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        lazy: {
-          loadPrevNext: true,
-        },
         on: {
           init: function () {
             // eslint-disable-next-line no-undef
