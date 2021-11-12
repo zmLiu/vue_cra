@@ -72,6 +72,9 @@ export default {
           reachEnd: () => {
             this.isEnd = true;
           },
+          fromEdge:()=>{
+            this.isEnd=false;
+          },
           slideChange: () => {
             // console.log(this.swiper.progress);
             // console.log(this.swiper.isEnd);
