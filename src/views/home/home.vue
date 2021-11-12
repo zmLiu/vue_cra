@@ -2,7 +2,8 @@
   <div class="home">
     <home-nav ref="navBox" v-if="!isEnd"/>
     <float-box v-if="!isEnd"/>
-    <swiper class="home-swiper  swiper-no-swiping" ref="mySwiper" :options="swiperOptions">
+<!--    swiper-no-swiping-->
+    <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
       <home-page1/>
       <home-page2/>
       <home-page3 ref="page3"/>
@@ -52,6 +53,7 @@ export default {
       swiperOptions: {
         direction: "vertical",
         mousewheel: true,
+        touchRatio:.5,
         speed: 1000,
         slidesPerView: "auto",
         simulateTouch: false,
