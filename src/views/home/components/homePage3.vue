@@ -252,19 +252,9 @@ export default {
     setContentScale() {
       let winW = window.innerWidth;
       let winH = window.innerHeight;
-      let scale = 1;
-      //需要是缩小的屏幕尺寸
-      if (winH < 900 || winW < 1500) {
-        if (winH / winW >= 900 / 1500) {
-          scale = winW / 1800;
-        } else {
-          scale = winH / 900;
-        }
-      }
-      if (winH < 900) {
-        this.$refs.content.style.bottom = "-" + winH * (0.8 - scale) + "px";
-      }
-      console.log(scale);
+      let sx = winW / 1920;
+      let sy = winH / 1000;
+      let scale = sx > sy ? sy : sx;
       this.$refs.content.style.transform = "scale(" + scale + ")";
     },
   },
@@ -462,14 +452,14 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    height: 40vh;
+    height: 400px;
   }
 
   .coming-soon1 {
     position: absolute;
     top: 0;
     right: 0;
-    height: 25vh;
+    height: 250px;
   }
 }
 
