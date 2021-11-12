@@ -423,16 +423,16 @@ export default {
     right: 50px;
     bottom: 20px;
     z-index: 100;
-    width: 500px;
+    width: 460px;
 
     .img6 {
       height: 60px;
     }
 
     .text {
-      font-size: 1.8vh;
+      font-size: 18px;
       color: #fff;
-      height: 15vh;
+      height: 200px;
       margin-bottom: 40px;
       padding-right: 40px;
     }
