@@ -17,7 +17,7 @@
     />
     <div class="content">
       <swiper
-        class="page3-swiper swiper-no-swiping"
+        class="page3-swiper"
         ref="mySwiper"
         :options="swiperOptions"
       >
