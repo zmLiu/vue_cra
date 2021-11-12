@@ -6,6 +6,7 @@
           :key="index"
           :class="[index === activeItem ? 'active' : '', 'item']"
           @click="onClick(index)"
+          :style="item.style"
         >
           {{ item.name }}
         </div>
@@ -27,9 +28,9 @@ export default {
     return {
       activeItem: 0,
       navList: [
-        { name: "Home" },
+        { name: "Home" ,style:{paddingTop:'2px'}},
         { name: "Gameplay" },
-        { name: "NFTS" },
+        { name: "NFTS" ,style:{paddingTop:'2px'}},
         { name: "Contact" },
       ],
     };
@@ -86,6 +87,8 @@ export default {
     height: 28px;
     transition: 0.5s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   .active {
