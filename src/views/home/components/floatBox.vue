@@ -1,7 +1,7 @@
 <template>
   <div class="float-box">
     <a href="https://twitter.com/Era7_official" target="_blank"></a>
-    <a href="https://discord.gg/yUjGpQ35" target="_blank"></a>
+    <a href="https://discord.gg/jtFRzTv5Zw" target="_blank"></a>
     <a href="https://t.me/joinchat/aF3LUIC8PKVhNDA6" target="_blank"></a>
   </div>
 </template>
