@@ -13,12 +13,9 @@
         <div class="share-box">
           <div class="title">JOIN OUR COMMUNITY</div>
           <div class="btns">
-            <a href="https://twitter.com/Era7_official" target="_blank"></a>
-            <a href="https://discord.gg/jtFRzTv5Zw" target="_blank"></a>
-            <a
-              href="https://t.me/joinchat/aF3LUIC8PKVhNDA6"
-              target="_blank"
-            ></a>
+            <a v-bind:href="twitter" target="_blank"></a>
+            <a v-bind:href="discord" target="_blank"></a>
+            <a v-bind:href="telegram" target="_blank"></a>
           </div>
         </div>
       </div>
@@ -28,6 +25,7 @@
 
 <script>
 import { SwiperSlide } from "vue-awesome-swiper";
+import { mapGetters } from "vuex";
 
 export default {
   name: "homePage4",
@@ -36,7 +34,10 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    ...mapGetters(["twitter", "telegram", "discord"]),
+    
+  },
   methods: {
     onClick: function (index) {
       this.swiper.slideTo(index, 1000, true);

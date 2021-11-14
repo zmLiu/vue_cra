@@ -28,9 +28,9 @@ export default {
     return {
       activeItem: 0,
       navList: [
-        { name: "Home" ,style:{paddingTop:'2px'}},
+        { name: "Home", style: { paddingTop: "2px" } },
         { name: "Gameplay" },
-        { name: "NFTS" ,style:{paddingTop:'2px'}},
+        { name: "NFTS", style: { paddingTop: "2px" } },
         { name: "Contact" },
       ],
     };

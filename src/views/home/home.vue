@@ -1,21 +1,21 @@
 <template>
   <div class="home">
-    <home-nav ref="navBox" v-show="!isEnd"/>
-    <float-box v-show="!isEnd"/>
+    <home-nav ref="navBox" v-show="!isEnd" />
+    <float-box v-show="!isEnd" />
     <!--    swiper-no-swiping-->
     <swiper class="home-swiper" ref="mySwiper" :options="swiperOptions">
-      <home-page1/>
-      <home-page2/>
-      <home-page3 ref="page3"/>
-      <home-page5/>
-      <home-page4 ref="page4"/>
+      <home-page1 />
+      <home-page2 />
+      <home-page3 ref="page3" />
+      <home-page5 />
+      <home-page4 ref="page4" />
     </swiper>
-    <coming-soon/>
+    <coming-soon />
   </div>
 </template>
 
 <script>
-import {Swiper, directive} from "vue-awesome-swiper";
+import { Swiper, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import HomePage1 from "@/views/home/components/homePage1";
 import HomeNav from "@/views/home/components/homeNav";
@@ -53,7 +53,7 @@ export default {
       swiperOptions: {
         direction: "vertical",
         mousewheel: true,
-        touchRatio: .5,
+        touchRatio: 0.5,
         speed: 1000,
         slidesPerView: "auto",
         simulateTouch: false,
@@ -74,8 +74,8 @@ export default {
             this.navBox.activeItem = this.swiper.activeIndex;
             this.$refs.page3.pageIndex = this.swiper.activeIndex;
           },
-          fromEdge:()=>{
-            this.isEnd=false;
+          fromEdge: () => {
+            this.isEnd = false;
             this.navBox.activeItem = this.swiper.activeIndex;
             this.$refs.page3.pageIndex = this.swiper.activeIndex;
           },
@@ -90,23 +90,18 @@ export default {
         // Some Swiper option/callback...
       },
     };
-  }
-  ,
+  },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    }
-    ,
-  }
-  ,
+    },
+  },
   mounted() {
     this.navBox = this.$refs.navBox;
     this.navBox.swiper = this.swiper;
     this.$refs.page4.swiper = this.swiper;
-  }
-  ,
-}
-;
+  },
+};
 </script>
 <style lang="less">
 .home-swiper {

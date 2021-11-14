@@ -1,12 +1,13 @@
 <template>
   <div class="float-box">
-    <a href="https://twitter.com/Era7_official" target="_blank"></a>
-    <a href="https://discord.gg/jtFRzTv5Zw" target="_blank"></a>
-    <a href="https://t.me/joinchat/aF3LUIC8PKVhNDA6" target="_blank"></a>
+    <a target="_blank" v-bind:href="twitter"></a>
+    <a target="_blank" v-bind:href="discord"></a>
+    <a target="_blank" v-bind:href="telegram"></a>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "floatBox",
   props: {},
@@ -14,7 +15,9 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    ...mapGetters(["twitter", "telegram", "discord"]),
+  },
   methods: {},
   watch: {},
   created() {},

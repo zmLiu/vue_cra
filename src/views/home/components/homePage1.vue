@@ -101,9 +101,13 @@ export default {
   mounted() {
     this.initDragonBones();
     let thisObj = this;
-    window.addEventListener('resize',() => {
-      thisObj.setDragonBonesScale();
-    }, false);
+    window.addEventListener(
+      "resize",
+      () => {
+        thisObj.setDragonBonesScale();
+      },
+      false
+    );
   },
   updated() {},
   beforeDestroy() {},
