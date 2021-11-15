@@ -5,7 +5,7 @@
       <div class="r-wrapper">
         <div class="nav">
           <a @click="onClick(0)">HOME</a>
-          <a @click="onClick(1)">PLAY TO ERARN</a>
+          <a @click="onClick(1)">PLAY TO EARN</a>
           <a @click="onClick(1)">GAME PLAY</a>
           <a @click="onClick(2)">NFTS ITEMS</a>
           <a @click="$store.commit('Set_ComingSoon', true)">WHITEPAPER</a>
