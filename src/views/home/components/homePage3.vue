@@ -57,7 +57,15 @@
               swiper-animate-duration=".4s"
               swiper-animate-delay=".4s"
             >
-              {{ text }}
+             King of the beasts in the wild.
+
+Ryan is forthright, informal and heroic. He believes that there's nothing that can't be solved by a fight.
+
+Ryan was raised by wild animals and was able to communicate with beasts in the wild.
+
+It is said that when he was young, he challenged and defeated a hundred different ferocious beasts (the source of his scars) with his bare hands, earning the respect and recognition of all beasts in the wild.
+
+The biggest headache for Ryan is doing arithmetic. 
             </div>
             <div
               @click="$store.commit('Set_ComingSoon', true)"
@@ -205,7 +213,6 @@ export default {
     return {
       pageIndex: 0,
       activeIndex: 0,
-      text: "King of beasts in the wild. Forthright, informal, heroic. There's nothing that can't be solved by fighting. Ryan was raised by wild animals from an early age and was able to communicate with wild beasts in the wild.Legend has it that when he was young, he challenged and defeated a hundred different ferocious beasts with his bare hands, earning the respect and recognition of all animals in the wild.",
       swiperOptions: {
         pagination: {
           el: ".home-page3-pagination",

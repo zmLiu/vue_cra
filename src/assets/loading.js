@@ -3,7 +3,7 @@ export function loadingFn() {
   // $loading.parentNode.removeChild($loading);
   setTimeout(() => {
     let imgs = document.querySelectorAll("img");
-    let allLen = imgs.length + 1;
+    let allLen = imgs.length + 10;
     let count = 0;
     setProgress();
     imgs.forEach((item) => {
@@ -24,7 +24,7 @@ export function loadingFn() {
     }
     let timer = setInterval(() => {
       if (window.iframeLoaded) {
-        count++;
+        count += 10;
         setProgress();
         clearInterval(timer);
       }

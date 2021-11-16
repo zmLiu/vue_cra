@@ -47,14 +47,7 @@
         >
           <img src="../../../assets/images/P2/p2_title.png" alt="" />
           <div class="text font-light">
-            Era7: Game of Truth makes it easy to make money every day! Era7
-            focuses on creating a financial system that combines blockchain with
-            games to create an E-sports ecosystem. With up to 1000 different
-            cards in the game, this will give players a 3-minute, one-game
-            experience and rich Era token, GOT(a resource token for summoning
-            functions) rewards, players can trade, regardless of your game
-            technology or the size of your investment in NFTs, and you'll have a
-            chance to earn money!
+            Era7: By playing Game of Truth, you can make money easily every day! Era7 focuses on creating a financial system combining blockchain and games to create an E-sports ecosystem. There are up to 1000 different cards in the game, which will bring players a3-minute game experience and rich ERA token and GOT (a resource token used for summoning function) rewards. Players can trade in the game. No matter you are pro or rookie, no matter you invest a lot or little, you will still have the opportunity to win revenue!
           </div>
         </div>
       </div>

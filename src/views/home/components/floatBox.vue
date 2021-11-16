@@ -3,6 +3,8 @@
     <a target="_blank" v-bind:href="twitter"></a>
     <a target="_blank" v-bind:href="discord"></a>
     <a target="_blank" v-bind:href="telegram"></a>
+    <a target="_blank" v-bind:href="facebook"></a>
+    <a target="_blank" v-bind:href="reddit"></a>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["twitter", "telegram", "discord"]),
+    ...mapGetters(["twitter", "telegram", "discord","facebook","reddit"]),
   },
   methods: {},
   watch: {},
@@ -37,7 +39,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   width: 60px;
-  height: 180px;
+  height: 230px;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -49,7 +51,7 @@ export default {
     height: 32px;
     display: block;
     background: url("../../../assets/images/P1/p1_fuchuang_icon4.png") no-repeat;
-    background-size: 96px 64px;
+    background-size: 160px 64px;
     &:hover {
       background-position-y: -32px;
     }
@@ -61,6 +63,12 @@ export default {
     }
     &:nth-child(3) {
       background-position-x: -64px;
+    }
+    &:nth-child(4) {
+      background-position-x: -96px;
+    }
+    &:nth-child(5) {
+      background-position-x: -128px;
     }
   }
 }
