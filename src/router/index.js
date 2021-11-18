@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "./../views/home/home.vue";
+import index from "../views/index.vue"
 import comingSoon from "./../views/comingSoon/index.vue";
 
 Vue.use(VueRouter);
@@ -8,8 +8,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "index",
+    component: index,
   },
   {
     path: "/coming_soon",

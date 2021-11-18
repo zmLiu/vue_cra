@@ -95,22 +95,20 @@ export default {
       this.$refs.dragonBones.contentWindow.setAniScale(sy >= 1 ? 1 : sy);
       window.iframeLoaded = true;
     },
+    onWindowResize: function(){
+      this.setDragonBonesScale();
+    }
   },
   watch: {},
   created() {},
   mounted() {
     this.initDragonBones();
-    let thisObj = this;
-    window.addEventListener(
-      "resize",
-      () => {
-        thisObj.setDragonBonesScale();
-      },
-      false
-    );
+    window.addEventListener("resize",this.onWindowResize);
   },
   updated() {},
-  beforeDestroy() {},
+  beforeDestroy() {
+    window.removeEventListener("resize",this.onWindowResize);
+  },
   destroyed() {},
 };
 </script>

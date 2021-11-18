@@ -264,18 +264,21 @@ export default {
       let scale = sx > sy ? sy : sx;
       this.$refs.content.style.transform = "scale(" + scale + ")";
     },
+    onWindowResize: function(){
+      this.setContentScale();
+    }
   },
   watch: {},
   created() {},
   async mounted() {
     await this.$nextTick();
     this.setContentScale();
-    window.onresize = () => {
-      this.setContentScale();
-    };
+    window.addEventListener("resize",this.onWindowResize);
   },
   updated() {},
-  beforeDestroy() {},
+  beforeDestroy() {
+    window.removeEventListener("resize",this.onWindowResize);
+  },
   destroyed() {},
 };
 </script>
