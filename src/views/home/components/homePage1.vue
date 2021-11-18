@@ -95,19 +95,19 @@ export default {
       this.$refs.dragonBones.contentWindow.setAniScale(sy >= 1 ? 1 : sy);
       window.iframeLoaded = true;
     },
-    onWindowResize: function(){
+    onWindowResize: function () {
       this.setDragonBonesScale();
-    }
+    },
   },
   watch: {},
   created() {},
   mounted() {
     this.initDragonBones();
-    window.addEventListener("resize",this.onWindowResize);
+    window.addEventListener("resize", this.onWindowResize);
   },
   updated() {},
   beforeDestroy() {
-    window.removeEventListener("resize",this.onWindowResize);
+    window.removeEventListener("resize", this.onWindowResize);
   },
   destroyed() {},
 };

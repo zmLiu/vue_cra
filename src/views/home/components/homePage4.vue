@@ -37,8 +37,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["twitter", "telegram", "discord","facebook","reddit"]),
-    
+    ...mapGetters(["twitter", "telegram", "discord", "facebook", "reddit"]),
   },
   methods: {
     onClick: function (index) {

@@ -57,15 +57,14 @@
               swiper-animate-duration=".4s"
               swiper-animate-delay=".4s"
             >
-             King of the beasts in the wild.
-
-Ryan is forthright, informal and heroic. He believes that there's nothing that can't be solved by a fight.
-
-Ryan was raised by wild animals and was able to communicate with beasts in the wild.
-
-It is said that when he was young, he challenged and defeated a hundred different ferocious beasts (the source of his scars) with his bare hands, earning the respect and recognition of all beasts in the wild.
-
-The biggest headache for Ryan is doing arithmetic. 
+              King of the beasts in the wild. Ryan is forthright, informal and
+              heroic. He believes that there's nothing that can't be solved by a
+              fight. Ryan was raised by wild animals and was able to communicate
+              with beasts in the wild. It is said that when he was young, he
+              challenged and defeated a hundred different ferocious beasts (the
+              source of his scars) with his bare hands, earning the respect and
+              recognition of all beasts in the wild. The biggest headache for
+              Ryan is doing arithmetic.
             </div>
             <div
               @click="$store.commit('Set_ComingSoon', true)"
@@ -264,20 +263,20 @@ export default {
       let scale = sx > sy ? sy : sx;
       this.$refs.content.style.transform = "scale(" + scale + ")";
     },
-    onWindowResize: function(){
+    onWindowResize: function () {
       this.setContentScale();
-    }
+    },
   },
   watch: {},
   created() {},
   async mounted() {
     await this.$nextTick();
     this.setContentScale();
-    window.addEventListener("resize",this.onWindowResize);
+    window.addEventListener("resize", this.onWindowResize);
   },
   updated() {},
   beforeDestroy() {
-    window.removeEventListener("resize",this.onWindowResize);
+    window.removeEventListener("resize", this.onWindowResize);
   },
   destroyed() {},
 };
